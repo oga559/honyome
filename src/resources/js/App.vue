@@ -1,18 +1,14 @@
 <template>
-  <div>{{ hello }}</div>
+
 </template>
 
 <script lang="ts">
-import { ref } from "vue";
-export default {
-  setup() {
-      const hello = ref(
-          "Hello From TypeScript"
-      )
+var search = async() =>{
+    var res = await fetch('https://www.googleapis.com/books/v1/volumes?q=鬼滅');
+    var data = await res.json();
 
-      return {
-          hello
-      }
-  },
-};
+    console.log(data);
+}
+
+search();
 </script>
